@@ -1,0 +1,112 @@
+body {
+    background-color: #f4f9ff;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Navbar Area */
+.navbar {
+    padding: 20px 0;
+}
+
+/* Navbar Container */
+.navbar .container {
+    border-radius: 50px;
+    background: linear-gradient(96deg, #0218ff 0%, #7516a9 100%);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+    padding: 10px 30px;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* Navbar Links */
+.nav-link {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    margin-right: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #fff;
+}
+
+/* Buttons */
+.btn-outline-primary {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-primary:hover {
+    background-color: #fff;
+    color: #7516a9;
+    border-color: #fff;
+}
+
+.btn-primary {
+    background-color: #fff;
+    color: #7516a9;
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #0218ff;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(120deg, #eef7ff, #f4f9ff);
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.hero h1 span {
+    background: linear-gradient(96deg, #0218ff 0%, #7516a9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container input {
+    margin-bottom: 15px;
+}
+
+.form-container .btn-primary {
+    width: 100%;
+    border-radius: 30px;
+}
+
