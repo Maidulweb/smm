@@ -346,3 +346,12 @@ ul.list-style-none li a {
 .border-btn {
     border: 1px solid;
 }
+.btn-new-n{
+width: 100%;
+border: 1px solid;
+text-align: left;
+}
+.shop_logo button {
+    background: transparent;
+    border: none;
+}

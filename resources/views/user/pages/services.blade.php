@@ -22,12 +22,12 @@
                <div class="min_max">
                   <h4>Min/Max</h4>
                </div>
-               <div class="refill">
+               {{-- <div class="refill">
                   <h4>Refill</h4>
                </div>
                <div class="time">
                   <h4>Average time</h4>
-               </div>
+               </div> --}}
                <div class="desc">
                   <h4>Description</h4>
                </div>
@@ -65,12 +65,21 @@
                   <h4 id="serv_name_{{$service->id}}">{{$service->service_title}}</h4>
                </div>
                <div class="shop_logo">
-                  <a
+                  <button
+                     href="javascript:void(0)"
+                     onclick="showDetails('{{$service->id}}','500','1 000 000', '$0.40')"
+                     >
+                     <iconify-icon icon="mdi:cart"></iconify-icon>
+                  </button>
+                  <span id="serv_details-{{$service->id}}" class="hidden"
+                     >{{$service->description}}</span
+                     >
+                 {{--  <a
                      class="logo_wrap"
                      href="https://growfollows.com/?service={{$service->id}}"
                      >
                      <iconify-icon icon="mdi:cart"></iconify-icon>
-                  </a>
+                  </a> --}}
                </div>
                <div class="rate">
                   <h4>
@@ -80,14 +89,14 @@
                <div class="min_max">
                   <h4>@lang($service->min_amount) / @lang($service->max_amount)</h4>
                </div>
-               <div class="refill">
+               {{-- <div class="refill">
                   <button>
-                  {{$service->refill}}
+                  {{$service->refill == 1 ? 'Refill' : 'No Refill'}}
                   </button>
                </div>
                <div class="time">
                   <h4>Not enough data</h4>
-               </div>
+               </div> --}}
                <div class="desc">
                   <button
                      href="javascript:void(0)"

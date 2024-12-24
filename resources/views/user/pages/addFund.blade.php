@@ -39,7 +39,7 @@
                                     @php
                                         $firstGateway = $gateways->first();
                                     @endphp
-                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                                    <button class="btn btn-new-n display-block dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
                                         <span id="selected-method">{{ $firstGateway->name ?? 'Select Method' }}</span>
                                     </button>
                                     <ul class="dropdown-menu gateway_ul">
@@ -97,7 +97,7 @@
                                     <div id="amount-fields" style="display: flex;">
                                       <div style="flex: 1 1 0%;">
                                         <label for="amount" class="control-label"><span id="amount_label">Amount</span> <span id="amount_label_currency" class="">, USD</span></label>
-                                        <input type="text" inputmode="decimal" class="form-control" name="AddFoundsForm[amount]" id="amount" step="0.01">
+                                        <input type="text" inputmode="decimal" class="form-control" name="AddFoundsForm[amount]" id="amount2" step="0.01">
                                       </div>
                                     <label id="amount-converted-icon" style="display: flex;align-items: center;margin: 0 18px;margin-bottom: -25px;" class="control-label">
                                         <i class="fas fa-exchange" style="color: currentColor;"></i>
@@ -106,14 +106,14 @@
                                         <label for="amount-converted-input" class="control-label">
                                             Amount, BDT
                                         </label>
-                                        <input type="text" inputmode="decimal" class="form-control" name="" id="amount-converted-input">
+                                        <input readonly type="text" inputmode="decimal" class="form-control amount" name="amount" id="amount-converted-input">
                                     </div>
                                    </div>
                                   </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="amount" class="control-label">Amount</label>
                                     <input type="text" inputmode="decimal" class="form-control amount" name="amount" id="amount">
-                                </div>
+                                </div> --}}
                                 <button type="button" class="btn btn-primary checkCalc">Check</button>
                             </div>
 
@@ -257,7 +257,7 @@ $(document).ready(function () {
                         <li class="list-group-item">Amount: <strong>${data.amount}</strong></li>
                         <li class="list-group-item">Charge: <strong>${data.charge}</strong></li>
                         <li class="list-group-item">Payable: <strong>${data.payable}</strong></li>
-                        <li class="list-group-item">Conversion Rate: <strong>$1 = 119BDT</strong></li>
+                        <li class="list-group-item">Conversion Rate: <strong>$1 = 118BDT</strong></li>
                         <li class="list-group-item">
                             <a href="${data.payment_url}" class="btn btn-primary">Pay Now</a>
                         </li>
@@ -268,7 +268,7 @@ $(document).ready(function () {
                 $('#loading').addClass('d-none');
             },
             error: function (err) {
-                alert('Error occurred. Please try again.');
+                alert('Insufficient Balance');
             }
         });
     });
@@ -279,16 +279,18 @@ $(document).ready(function () {
         const exchangeRate = 118;
 
         
-        $('#amount').on('input', function () {
+        $('#amount2').on('input', function () {
             const usdAmount = parseFloat($(this).val());
             if (!isNaN(usdAmount)) {
               
                 const bdtAmount = (usdAmount * exchangeRate).toFixed(2);
                
                 $('#amount-converted-input').val(bdtAmount);
+               /*  $('#amount').val(bdtAmount); */
             } else {
                
                 $('#amount-converted-input').val('');
+                /* $('#amount').val(''); */
             }
         });
     }); 
